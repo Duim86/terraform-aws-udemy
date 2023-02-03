@@ -1,0 +1,22 @@
+terraform apply
+terraform fmt
+terraform validate
+terraform init
+terraform destroy
+terraform plan -out "tfplan.out"
+terraform apply -auto-approve
+TF_VAR_aws_profile=tf014 terraform plan
+terraform plan -var="aws_profile=tf014"
+terraform plan -var-file="prod.tfvars"
+terraform "tfplan.out"
+terraform console
+terraform import aws_s3_bucket.manual "meubucketaws"
+terraform fmt -recursive
+terraform init -backend=true -backend-config="key=value"
+terraform init -backend=true -backend-config="backend.hcl"
+terraform output -json
+
+
+
+### data pull
+### resource push
