@@ -1,5 +1,5 @@
 resource "random_pet" "this" {
-  length = 5  
+  length = 5
 }
 
 resource "aws_s3_bucket" "this" {
@@ -7,10 +7,10 @@ resource "aws_s3_bucket" "this" {
 }
 
 resource "aws_s3_object" "this" {
-  bucket = aws_s3_bucket.this.bucket  
-  key = "instances/instances-${local.instance.ami}.json"
-  source = "outputs.json"
-  etag = filemd5("outputs.json")
+  bucket       = aws_s3_bucket.this.bucket
+  key          = "instances/instances-${local.instance.ami}.json"
+  source       = "outputs.json"
+  etag         = filemd5("outputs.json")
   content_type = "application/json"
 }
 

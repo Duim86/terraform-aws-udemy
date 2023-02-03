@@ -16,6 +16,8 @@ terraform init -backend=true -backend-config="key=value"
 terraform init -backend=true -backend-config="backend.hcl"
 terraform output -json
 
+terraform workspace
+
 
 
 ### data pull
