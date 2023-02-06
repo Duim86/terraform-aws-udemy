@@ -22,3 +22,15 @@ variable "service_name" {
   default     = "autoscaling-app"
 }
 
+variable "instance_type" {
+  type        = string
+  description = ""
+  default     = "t2.micro"
+}
+
+variable "instance_key_name" {
+  type        = string
+  description = ""
+  default     = "terraform-kp"
+}
+
