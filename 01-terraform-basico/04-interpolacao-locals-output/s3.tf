@@ -6,9 +6,9 @@ resource "aws_s3_bucket" "this" {
 
 resource "aws_s3_object" "this" {
   bucket = aws_s3_bucket.this.bucket
-  key = "config/${local.ip_filepath}"
+  key    = "config/${local.ip_filepath}"
   source = local.ip_filepath
-  etag = filemd5(local.ip_filepath)
+  etag   = filemd5(local.ip_filepath)
 
   content_type = "application/json"
 
@@ -17,9 +17,9 @@ resource "aws_s3_object" "this" {
 
 resource "aws_s3_object" "random" {
   bucket = aws_s3_bucket.this.bucket
-  key = "config/${random_pet.bucket.id}.json"
+  key    = "config/${random_pet.bucket.id}.json"
   source = local.ip_filepath
-  etag = filemd5(local.ip_filepath)
+  etag   = filemd5(local.ip_filepath)
 
   content_type = "application/json"
 

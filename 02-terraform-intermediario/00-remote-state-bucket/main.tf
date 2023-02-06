@@ -17,7 +17,7 @@ provider "aws" {
 data "aws_caller_identity" "current" {}
 
 resource "aws_s3_bucket" "remote-state" {
-  bucket = "tfstate-${data.aws_caller_identity.current.account_id}"
+  bucket        = "tfstate-${data.aws_caller_identity.current.account_id}"
   force_destroy = true
 
   tags = {
@@ -44,12 +44,4 @@ resource "aws_dynamodb_table" "lock-table" {
     name = "LockID"
     type = "S"
   }
-}
-
-output "remote_state_bucket" {
-  value = aws_s3_bucket.remote-state.bucket
-}
-
-output "remote_state_bucket_arn" {
-  value = aws_s3_bucket.remote-state.arn
 }

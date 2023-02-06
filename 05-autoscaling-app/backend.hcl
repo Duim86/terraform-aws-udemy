@@ -1,0 +1,5 @@
+bucket         = "tfstate-406130605113"
+key            = "03-static-website/terraform.tfstate"
+region         = "us-east-1"
+profile        = "terraform"
+dynamodb_table = "tflock-tfstate-406130605113"

@@ -26,6 +26,6 @@ resource "null_resource" "null" {
       FOO = "bar"
       BAR = 1
       BAZ = "true"
-    }    
+    }
   }
 }
